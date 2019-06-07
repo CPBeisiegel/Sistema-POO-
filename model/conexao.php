@@ -1,21 +1,20 @@
-<?php 
+<?php
 
-$host = "mysql:host=localhost;dbname=desafiophp;charset=utf8mb4;port=3306";
-$db_User = "root";
-$dbPass = "";
+    $host = "mysql:host=localhost;dbname=sistemapoo;charset=utf8mb4;port=3306";
+    $dbUser = "root";
+    $dbPass = "";
+    
 
+    try{
+         $con = new PDO($host,$dbUser,$dbPass);
+         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       
+    }catch(PDOException $e){
+        echo "Estamos em manutenção, volte novamente mais tarde";
 
-try {
-    $con = new PDO($host,$db_User,$dbPass);
+        echo $e->getMessage();
 
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
 
-
-}catch( PDOException $e ) {
-    echo "Estamos em manutenção, volte novamente mais tarde";
-
-    echo $e->getMessage();
-}
-
-
-
+   
+   

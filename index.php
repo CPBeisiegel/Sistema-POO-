@@ -9,3 +9,4 @@ $obj = new $controller();
 $obj->view($_SERVER['REQUEST_METHOD']);
 
 ?>
+
